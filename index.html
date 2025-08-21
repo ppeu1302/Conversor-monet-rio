@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Conversor de Moedas</h1>
+        <p class="subtitle">Cotações em tempo quase real via API pública</p>
+      </header>
+
+      <section class="card">
+        <form id="converter-form" autocomplete="off">
+          <div class="field-group">
+            <label for="amount">Valor</label>
+            <input id="amount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="Ex: 100.00" required />
+          </div>
+
+          <div class="grid-2">
+            <div class="field-group">
+              <label for="from">De</label>
+              <select id="from"></select>
+            </div>
+
+            <button type="button" id="swap" class="swap" title="Trocar moedas" aria-label="Trocar moedas">⇄</button>
+
+            <div class="field-group">
+              <label for="to">Para</label>
+              <select id="to"></select>
+            </div>
+          </div>
+
+          <button type="submit" class="primary">Converter</button>
+        </form>
+
+        <div id="status" class="status" aria-live="polite"></div>
+
+        <output id="result" class="result" for="converter-form">
+          <span class="ghost">O resultado aparecerá aqui</span>
+        </output>
+
+        <div class="meta">
+          <small id="meta-info"></small>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>Feito para estudos • Front-End • JavaScript + API</small>
+      </footer>
+    </main>
+
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
