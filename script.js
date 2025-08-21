@@ -33,7 +33,7 @@ async function fetchCurrencies() {
     const res = await fetch('https://api.frankfurter.app/currencies');
     if (!res.ok) throw new Error('Falha ao obter moedas');
     const data = await res.json();
-    // data = { "USD": "United States Dollar", "BRL": "Brazilian Real", ... }
+
     return Object.entries(data)
       .map(([code, name]) => ({ code, name }))
       .sort((a, b) => a.code.localeCompare(b.code));
@@ -80,7 +80,7 @@ async function convert(amount, from, to) {
   const res = await fetch(url);
   if (!res.ok) throw new Error('Não foi possível obter a cotação no momento.');
   const data = await res.json();
-  // data = { amount, base, date, rates: { [to]: value } }
+
   const rate = data.rates?.[to];
   if (typeof rate !== 'number') throw new Error('Cotação indisponível para o par selecionado.');
   return { amount: data.amount, rate, converted: rate, date: data.date };
