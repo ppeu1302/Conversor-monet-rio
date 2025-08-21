@@ -114,3 +114,26 @@ input:focus, select:focus{
 .meta{margin-top:.25rem; color:var(--muted)}
 
 .footer{margin-top:1rem; text-align:center; color:var(--muted)}
+
+
+select {
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  padding-right: 2.25rem;
+
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%2394a3b8'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+}
+
+select:hover,
+select:focus {
+  background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%23e5e7eb'><path d='M7 10l5 5 5-5z'/></svg>\");
+}
+
+/* IE antigo (pode ignorar, mas não custa) */
+select::-ms-expand { display: none; }
